@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <meta charset="UTF-8">
         <title>SISCA</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -269,11 +269,29 @@
 
 
 
-$(document).ready(function() {
-    $('#example1').DataTable();
+            $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example1 tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example1').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 } );
-
-
         </script>
 
 
@@ -281,7 +299,6 @@ $(document).ready(function() {
 
  
 
-        @stack('scripts')
         <!-- Bootstrap -->
       
 
@@ -315,6 +332,7 @@ $(document).ready(function() {
         <script src="{{asset('js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>  
 
       
+        @stack('scripts')
 
     </body>
 </html>

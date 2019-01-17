@@ -51,7 +51,7 @@ class IngresoController extends Controller
      ->where('i.idingreso','LIKE','%'.$query.'%')
      ->orderBy('i.idingreso','desc')
      ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
-     ->paginate();
+     ->get();
      return view('almacen.ingreso.index',['memos'=>$memos,'ingresos'=>$ingresos,'searchText'=>$query]);
       
      }

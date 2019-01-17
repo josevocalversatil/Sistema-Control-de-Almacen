@@ -4,55 +4,43 @@
 <!-- HACEMOS EL DISEÑO UTILIZANDO BOOTSTRAP  -->
 <!-- include es para incluir el buscador  -->
 
-<!--
-<div class="row">
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"> 
-
-    <h3>Listado de Categorias <a href="categoria/create"><button class="btn btn-success">Nuevo</button></a></h3>
-    @include('almacen.categoria.search')
-
-</div>
-</div>
--->
 
 <!-- HACEMOS EL DISEÑO AHORA METEMOS UNA TABLA  -->
 
-
-
   <section class="content">
                     <div class="row">
-                        <div class="col-xs-12">
-                            
-                            
+                        <div class="col-xs-12">                          
                             <div class="box">
-                                <div class="box-header">
-                                    <h3>Listado de Categorias <a href="categoria/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger">PDF</button></a></h3>
- 
+
+                               <div class="box-header">
+                                    <h3>Listado de Categorias <a href="categoria/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{url('categoriapdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
+
                                    <!--@include('almacen.categoria.search')-->
                                                                         
                                 </div><!-- /.box-header -->
-                                <div class="row">
+
+
+                                <div class="box-header">
+                                    <h3 class="box-title">Data Table With Full Features</h3>                                    
+                                </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
-                                    <table id="example1" class="display" style="width:100%">
+                                    <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                               
+                                               <tr>
                                                <th>Nombre</th>
                                                <th>Descripcion</th> 
-                                            
                                                <th>Opciones</th>
                                             </tr>
+                                            </tr>
                                         </thead>
-                                      
-                                         
-                                          <!-- esta variable es la que tenemos en la funcion del controlador para mandar el articulo  -->
-                                          <tbody>
-         @foreach ($categorias as $cat)
-        <tr>
+                                        <tbody>
+                                            @foreach ($categorias as $cat)
+                                      <tr>
          
       
-         <td>{{ $cat->nombre}}</td>
-         <td>{{ $cat->descripcion}}</td>
+                                  <td>{{ $cat->nombre}}</td>
+                                    <td>{{ $cat->descripcion}}</td>
 
          <td>
           <a href="{{URL::action('CategoriaController@edit',$cat->idcategoria)}}"><button class="btn btn-info">Editar</button></a>
@@ -64,10 +52,9 @@
           <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR     -->
        @include('almacen.categoria.modal')     
                                            @endforeach
-                                         </tbody>
-     
+                                        </tbody>
                                         <tfoot>
-                                            <tr>
+                                              <tr>
                                       
                                         <th>Nombre</th>
                                         <th>Descripcion</th>  
@@ -75,19 +62,17 @@
                                         <th>Opciones</th>
                                             </tr>
                                         </tfoot>
-                                         
-                                    </table>
                                    
-                             
-                              </div>
+                                    </table>
 
-                         
-                             {{$categorias->render()}}
+                                </div><!-- /.box-body -->
+
+                            </div><!-- /.box -->
+
                         </div>
+
                     </div>
 
-  
- 
-
+                </section><!-- /.content -->
 
                 @endsection 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
     <head>
         <meta charset="UTF-8">
         <title>SISCA</title>
@@ -17,7 +17,7 @@
         <!-- Theme style -->
         <link href="{{asset('css/AdminLTE.css')}}" rel="stylesheet" type="text/css" />
 
-       
+               <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -256,6 +256,11 @@
    <script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
          <script src="{{asset('js/plugins/daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
 
+  <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+
+
+ <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
+
 
            <script type="text/javascript">
        
@@ -351,10 +356,10 @@ $.fn.dataTable.ext.search.push(
 } );
 
       </script>
-
-        @stack('scripts')
+  @stack('scripts')
+     
         <!-- Bootstrap -->
-        <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+        
 
 
            
@@ -386,6 +391,6 @@ $.fn.dataTable.ext.search.push(
         <script src="{{asset('js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>  
 
       
-
+ 
     </body>
 </html>

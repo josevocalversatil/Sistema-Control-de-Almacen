@@ -10,14 +10,14 @@
 <!-- HACEMOS EL DISEÑO AHORA METEMOS UNA TABLA 
 
 
-
+ 
  -->
 
   
 <style type="text/css">
   
 tfoot input {
-        width: 100%;
+        width: 85%;
         padding: 3px;
         box-sizing: border-box;
     }
@@ -139,11 +139,11 @@ tfoot input {
    	    	<th>Fecha</th>
           <th># Factura</th>
    	    	<th>Proveedor</th>
-          <th># Memo</th>
+          <th>#Memo</th>
           <th>Autoriza</th>
           <th>Recibe</th>
           <th>Total</th>
-          <th>Estado</th>
+          
    	    	<th>Opciones</th>
 
    	    </thead>
@@ -157,29 +157,25 @@ tfoot input {
          <td>{{ $ing->fecha_hora}}</td>
          <td>{{ $ing->numero_factura}}</td>
          <td>{{ $ing->proveedor}}</td>
-
-          <td> 
-          
-            <a href="#">
-          <div>
-          {{ $ing->folio_memo}}
-          </div>
-         </a>
-   
-         </td> 
-           
+         <td>   {{ $ing->folio_memo}} </td> 
          <td>{{ $ing->personal3}}</td>
          <td>{{ $ing->personal4}}</td>
          <td>{{ $ing->total}}</td>
-         <td>{{ $ing->estado}}</td> 
+       
 
          <td>
-         	<a href="{{URL::action('IngresoController@show',$ing->idingreso)}}"><button class="btn btn-primary">Detalles</button></a>
-            <a href="" data-target="#modal-delete-{{$ing->idingreso}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
+         	<a href="{{URL::action('IngresoController@show',$ing->idingreso)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+            <a href="" data-target="#modal-delete-{{$ing->idingreso}}" data-toggle="modal" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></a>
+          
 
          </td>
 
    	    </tr>
+
+
+
+
+
 
           <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR -->
        @include('almacen.ingreso.modal')   	
@@ -195,13 +191,13 @@ tfoot input {
           <th>Autoriza</th>
           <th>Recibe</th>
           <th>Total</th>
-          <th>Estado</th>
+         
           <th>Opciones</th>
 
        </tfoot>
    
       </table> 	
-          {{$ingresos->render()}}
+        
     </div>
 
       </div>

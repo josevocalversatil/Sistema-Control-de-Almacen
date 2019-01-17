@@ -8,7 +8,7 @@ use sisAlmacen1\Categoria;  //MODEL
 use Illuminate\Support\Facades\Redirect;
 use sisAlmacen1\Http\Requests\CategoriaFormRequest; //VALIDACION
 use DB;
-
+use PDF;
 class CategoriaController extends Controller
 {
     //
@@ -32,12 +32,10 @@ class CategoriaController extends Controller
      
      if ($request) {
      	
-     	$query=trim($request->get('searchText'));
+     $query=trim($request->get('searchText'));
      	$categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
      	->where('condicion','=','1')
-     	->orderBy('idcategoria','desc')
-     	->paginate();
-
+        ->orderBy('idcategoria','desc')->get();
 
        //###############################3 RUTA DEL INDEX DE CATEGORIA #################################
      	return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
@@ -51,6 +49,19 @@ class CategoriaController extends Controller
     
     return view("almacen.categoria.create");
 
+    }
+
+       public function pdf()
+    {        
+        /**
+         * toma en cuenta que para ver los mismos 
+         * datos debemos hacer la misma consulta
+        **/
+        $categorias = Categoria::all(); 
+
+        $pdf = PDF::loadView('almacen.categoria.invoice', compact('categorias'));
+
+        return $pdf->download('listado.pdf');
     }
 
 

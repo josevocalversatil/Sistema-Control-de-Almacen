@@ -40,11 +40,11 @@ tfoot input {
    	    	<th>Codigo</th>
           <th>Categoria</th>
           <th>Descripcion</th>
-          <th>Stock</th>
+          <th>Stock(Exis)</th>
           <th>Stock minimo</th>
           <th>Stock maximo</th>
-          <th>Costo U</th>
-          <th>Costo T</th>
+          <th>Costo Promedio</th>
+          <th>Costo Total</th>
    	    
 
           <th>Opciones</th>
@@ -70,10 +70,11 @@ tfoot input {
         
 
          <td>
-         	<a href="{{URL::action('ArticuloController@edit',$art->idarticulo)}}"><button class="btn btn-info">Editar</button></a>
+  
 
-          <a href="" data-target="#modal-delete-{{$art->idarticulo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
-
+    <a href="{{URL::action('ArticuloController@edit',$art->idarticulo)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+            <a href="" data-target="#modal-delete-{{$art->idarticulo}}" data-toggle="modal" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></a>
+          
          </td>
 
    	    </tr>
@@ -90,8 +91,8 @@ tfoot input {
           <th>Stock</th>
           <th>Stock minimo</th>
           <th>Stock maximo</th>
-          <th>Costo U</th>
-          <th>Costo T</th>
+          <th>Costo Promedio</th>
+          <th>Costo Total</th>
   
 
           <th>Opciones</th>
