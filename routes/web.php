@@ -43,4 +43,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 //RUTAS PDF
 
 
+// ######################### RUTAS PDF  CATEGORIA #################################################################
 
+
+Route::get('categoriapdf', function()
+{
+      
+     $categorias=sisAlmacen1\categoria::all();
+	$pdf=PDF::loadView('almacen.categoria.invoice',['categorias'=>$categorias]);
+	return $pdf->stream('Categorias.pdf');
+
+});

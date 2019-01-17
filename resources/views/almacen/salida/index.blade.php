@@ -1,6 +1,6 @@
 @extends ('layouts.admin3')
 @section ('contenido')
- 
+  
 
 <!-- HACEMOS EL DISEÑO AHORA METEMOS UNA TABLA  -->
 <style type="text/css">

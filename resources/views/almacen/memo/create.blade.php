@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.admin4')
 @section ('contenido')
 
      <div class="row">
