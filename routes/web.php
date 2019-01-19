@@ -73,7 +73,8 @@ Route::get('personalpdf', function()
 {
       
      $personales=sisAlmacen1\personal::all();
-	$pdf=PDF::loadView('almacen.personal.invoice',['personales'=>$personales]);
+
+	$pdf=PDF::loadView('almacen.personal.invoice',['personales'=>$personales,]);
 	return $pdf->stream('Personal.pdf');
 
 });
