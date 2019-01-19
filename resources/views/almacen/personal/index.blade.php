@@ -21,7 +21,7 @@ tfoot input {
                             
                             <div class="box">
                                 <div class="box-header">
-                                    <h3>Listado de Personal <a href="personal/create"><button class="btn btn-success">Nuevo</button></a></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger">PDF</button></a></h3>
+                                    <h3>Listado de Personal <a href="personal/create"><button class="btn btn-success">Nuevo</button></a></a> Generar PDF <a href="{{ url('personalpdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
                                    <!--@include('almacen.categoria.search')-->
                                                                         
                                 </div><!-- /.box-header -->

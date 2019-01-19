@@ -54,3 +54,26 @@ Route::get('categoriapdf', function()
 	return $pdf->stream('Categorias.pdf');
 
 });
+
+// PDF - DEPARTAMENTO 
+
+Route::get('departamentopdf', function()
+{
+      
+     $departamentos=sisAlmacen1\departamento::all();
+	$pdf=PDF::loadView('almacen.departamento.invoice',['departamentos'=>$departamentos]);
+	return $pdf->stream('Departamentos.pdf');
+
+});
+
+// PDF - PERSONAL
+
+
+Route::get('personalpdf', function()
+{
+      
+     $personales=sisAlmacen1\personal::all();
+	$pdf=PDF::loadView('almacen.personal.invoice',['personales'=>$personales]);
+	return $pdf->stream('Personal.pdf');
+
+});
