@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use sisAlmacen1\Http\Requests\SalidaFormRequest;
 use sisAlmacen1\Salida;
 use sisAlmacen1\DetalleSalida;
+use sisAlmacen1\Departamento;
 use DB;
 
 //para usar la fecha 

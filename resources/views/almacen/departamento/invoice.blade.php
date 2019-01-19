@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
                 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <title>Categorias</title>
+        <title>Departamentos</title>
     </head>
 
 
@@ -22,7 +22,7 @@
 
  <img src="img/lt1.jpg" style="max-width:100%;width:auto;height:auto;"><br>
 
-       <center><h1>Listado de categorias</h1>
+       <center><h1>Listado de Departamentos</h1>
 </center> 
 
 
@@ -41,10 +41,10 @@
 
         <tbody>
 
-        @foreach ($categorias as $cat)
+        @foreach ($departamentos as $dep)
         <tr>
-         <td>{{ $cat->nombre}}</td>
-         <td>{{ $cat->descripcion}}</td>
+        <td>{{ $dep->nombre}}</td>
+       <td>{{ $dep->descripcion}}</td>
         </tr>
 
           <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR -->
@@ -55,6 +55,10 @@
       </div>    
    </div>
 </div>
+
+
+
+
       <footer >
       <div>
          

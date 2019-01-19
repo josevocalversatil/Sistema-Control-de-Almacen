@@ -52,3 +52,31 @@ Route::get('descargarPdfArticulos','ArticuloController@pdf');
 Route::get('categoriapdf','CategoriaController@pdf');
 
 
+<<<<<<< HEAD
+});
+
+// PDF - DEPARTAMENTO 
+
+Route::get('departamentopdf', function()
+{
+      
+     $departamentos=sisAlmacen1\departamento::all();
+	$pdf=PDF::loadView('almacen.departamento.invoice',['departamentos'=>$departamentos]);
+	return $pdf->stream('Departamentos.pdf');
+
+});
+
+// PDF - PERSONAL
+
+
+Route::get('personalpdf', function()
+{
+      
+     $personales=sisAlmacen1\personal::all();
+
+	$pdf=PDF::loadView('almacen.personal.invoice',['personales'=>$personales,]);
+	return $pdf->stream('Personal.pdf');
+
+});
+=======
+>>>>>>> 158051c0d4964ed6535ba338b94a4a023f11f667
