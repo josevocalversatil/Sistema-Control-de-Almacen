@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Input;
 use sisAlmacen1\Http\Requests\ArticuloFormRequest;
 use sisAlmacen1\Articulo;
 use DB;
-
+use PDF;
 class ArticuloController extends Controller
 {
 
@@ -117,7 +117,7 @@ public function update(ArticuloFormRequest $request,$id)
  $articulo->descripcion=$request->get('descripcion');
  $articulo->costo_unitario=$request->get('costo_unitario');
  $articulo->costo_total=$request->get('costo_total');
-
+ 
 
  $articulo->update();
 
@@ -140,6 +140,17 @@ public function destroy($id)
 
 
 
+
+public function pdf()
+{
+   
+  $articulos= Articulo::
+  select('articulo.*')
+  ->get();
+
+  $pdf=PDF::loadView("almacen.articulo.invoice",["articulos"=>$articulos]);
+  return $pdf->download("archivo.pdf");
+}
 
 
 
