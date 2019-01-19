@@ -35,6 +35,9 @@ Route::auth('layouts/index1');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('descargarPdfArticulos','ArticuloController@pdf');
+
+
 
 //Route::get('/{slug?}','HomeController@index');
 
@@ -43,16 +46,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 //RUTAS PDF
 
 
-// ######################### RUTAS PDF  CATEGORIA #################################################################
+
+Route::get('descargarPdfArticulos','ArticuloController@pdf');
+
+Route::get('categoriapdf','CategoriaController@pdf');
 
 
-Route::get('categoriapdf', function()
-{
-      
-     $categorias=sisAlmacen1\categoria::all();
-	$pdf=PDF::loadView('almacen.categoria.invoice',['categorias'=>$categorias]);
-	return $pdf->stream('Categorias.pdf');
-
+<<<<<<< HEAD
 });
 
 // PDF - DEPARTAMENTO 
@@ -78,3 +78,5 @@ Route::get('personalpdf', function()
 	return $pdf->stream('Personal.pdf');
 
 });
+=======
+>>>>>>> 158051c0d4964ed6535ba338b94a4a023f11f667
