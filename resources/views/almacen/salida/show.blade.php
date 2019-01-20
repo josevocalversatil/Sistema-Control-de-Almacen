@@ -3,7 +3,7 @@
 
 
             <!-- EL NAME DEL INPUT TIENE QUE SER IGUAL AL DEL CONTROLADOR Y AL DE LA VALIDACIONA POR QUE ES EL QUE SE ESTA MANDANDO    -->
-  <h3>Generar PDF <a href="{{ url('salidapdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
+  <h3>Generar PDF <a href="{{URL::action('SalidaController@pdf',$salida->idsalida)}}"><button class="btn btn-danger">PDF</button></a></h3>
         
            <div class="row"> 
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" >
@@ -64,7 +64,7 @@
                         </tfoot>
                         <tbody>
                             @foreach($detalles as $det)
-
+                            
                           <tr>
                           <td>{{$det->articulo}}</td>
                           <td>{{$det->cantidad}}</td>

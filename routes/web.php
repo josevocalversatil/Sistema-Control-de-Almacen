@@ -66,5 +66,5 @@ Route::get('stmaximopdf','StmaximoController@pdf');
 
 Route::get('stminimopdf','StminimoController@pdf');
 
-Route::get('salidapdf','SalidaController@pdf');
+Route::get('salidapdf/{id}','SalidaController@pdf');
 
