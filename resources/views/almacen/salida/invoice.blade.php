@@ -35,7 +35,7 @@
              <p>{{$fecha}}</p>
 
       
-
+  
 
   <div class="row">
             <div class="panel panel-primary">
@@ -50,14 +50,9 @@
                           <th>Cantidad</th>  
                           
                         </thead>
-                        <tfoot>
-                       
-                            <th></th>
-                            <th></th>
-                           
-
-                        </tfoot>
+                    
                         <tbody>
+
                             @foreach($detalles as $det)
 
                           <tr>
@@ -68,6 +63,11 @@
 
                            @endforeach
                         </tbody>
+
+                        <tfoot>
+                           <th>Articulo</th>  
+                          <th>Cantidad</th>  
+                        </tfoot>
                     </table>
 
 
