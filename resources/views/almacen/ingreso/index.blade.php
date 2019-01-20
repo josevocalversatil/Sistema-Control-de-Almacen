@@ -37,7 +37,7 @@
         <h3> Listado Entrada de Articulos  <i class="glyphicon glyphicon-shopping-cart"></i> <a href="ingreso/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger" >PDF</button></a></h3>
 
 
-        <input type="button" id="btnExport" value="Export" onclick="ocultar();Export();" />
+        <input type="button" id="btnExport" value="Export" onclick="ocultar();exportar_mostrar();" />
 
 
         
@@ -234,6 +234,7 @@
         pdfMake.createPdf(docDefinition).download("Table.pdf");
       }
     });
+
   }
 
 
@@ -243,6 +244,23 @@
     $("#example tbody td.opciones").hide(); 
     $("#example tfoot th.opciones").hide(); 
   }
+
+  function mostrar(){
+
+    $("#example thead th.opciones").show(); 
+    $("#example tbody td.opciones").show(); 
+    $("#example tfoot th.opciones").show(); 
+  }
+
+
+  function exportar_mostrar(){
+    Export();
+    window.setTimeout("mostrar()",1500);
+
+ 
+  }
+
+
 </script>
 
 @endsection 
