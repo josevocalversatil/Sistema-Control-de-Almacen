@@ -191,7 +191,7 @@
                         </li>
 
                          <li>
-                            <a href="#">
+                            <a href="{{url('almacen/acerca')}}">
                                 <i class="fa fa-info-circle"></i> <span>Acerca De..</span> 
                             </a>
                         </li>
@@ -292,6 +292,13 @@
         } );
     } );
 } );
+
+
+
+
+            function mayus(e) {
+  e.value = e.value.toUpperCase();
+}
         </script>
 
 

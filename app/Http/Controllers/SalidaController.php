@@ -11,6 +11,7 @@ use sisAlmacen1\Salida;
 use sisAlmacen1\DetalleSalida;
 use sisAlmacen1\Departamento;
 use DB;
+use PDF;
 
 //para usar la fecha 
 use Carbon\Carbon;
@@ -155,6 +156,43 @@ public function destroy($id)
 	$salida->update();
 	return Redirect::to('almacen/salida');
 } 
+
+
+ public function pdf($id)
+ {
+
+      
+ $salida=DB::table('salida as s')
+    
+    ->join('personal as pe','s.idpersonal','=','pe.idpersonal')
+    ->join('personal as per','s.idpersonal2','=','per.idpersonal')
+     ->join('memo as m','s.idmemo','=','m.idmemo')
+     ->join('detalle_salida as ds','s.idsalida','=','ds.idsalida')
+     ->join('departamento as dep','s.iddepartamento','=','dep.iddepartamento')
+
+   ->select('s.idsalida','s.fecha_hora','pe.nombre as personal3','dep.nombre as depa','per.nombre as personal4','m.folio_memo','s.estado')
+     ->where('s.idsalida','=',$id)
+     ->groupBy('s.idsalida','s.fecha_hora','pe.nombre','dep.nombre','per.nombre','m.folio_memo','s.estado')
+     ->first();
+
+     $detalles=DB::table('detalle_salida as d')
+     ->join('articulo as a','d.idarticulo','=','a.idarticulo' )
+     ->select('a.nombre as articulo','d.cantidad')
+     ->where('d.idsalida','=',$id)
+     ->get();
+
+     $date = Carbon::now();
+     $fecha=$date->format('d-m-Y');
+
+
+
+      $pdf=PDF::loadView("almacen.salida.invoice",["detalles"=>$detalles,"salida"=>$salida,"fecha"=>$fecha]);
+  return $pdf->stream("Salida.pdf");
+
+ 
+
+ }
+
 
 
 }

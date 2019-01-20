@@ -30,14 +30,14 @@
 
             <div class="form-group">
             	<label for="nombre">Nombre</label>
-            	<input type="text" name="nombre" class="form-control" placeholder="Nombre...">
+            	<input type="text" name="nombre" class="form-control" onchange="mayus(this);" placeholder="Nombre...">
             </div> 
             
- 
+
 
             <div class="form-group">
             	<label for="descripcion">Descripcion</label>
-            	<input type="text" name="descripcion" class="form-control" placeholder="Descripcion...">
+            	<input type="text" name="descripcion" class="form-control" onchange="mayus(this);" placeholder="Descripcion...">
             </div> 
 
             <div class="form-group">

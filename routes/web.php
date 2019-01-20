@@ -27,6 +27,8 @@ Route::resource('almacen/personal','PersonalController');
 Route::resource('almacen/departamento','DepartamentoController');
 Route::resource('almacen/usuario','UsuarioController');
 Route::resource('almacen/stminimo','StminimoController');
+
+
 Route::resource('almacen/stmaximo','StmaximoController');
 Route::get('/logout', 'Auth\LoginController@logout');
 //Route::resource('layouts/index1');
@@ -63,4 +65,6 @@ Route::get('usuariospdf','UsuarioController@pdf');
 Route::get('stmaximopdf','StmaximoController@pdf');
 
 Route::get('stminimopdf','StminimoController@pdf');
+
+Route::get('salidapdf','SalidaController@pdf');
 
