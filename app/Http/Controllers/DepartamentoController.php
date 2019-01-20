@@ -8,6 +8,7 @@ use sisAlmacen1\Departamento;  //MODEL
 use Illuminate\Support\Facades\Redirect;
 use sisAlmacen1\Http\Requests\DepartamentoFormRequest; //VALIDACION
 use DB;
+use PDF;
 
 
 class DepartamentoController extends Controller
@@ -101,6 +102,17 @@ class DepartamentoController extends Controller
 
 
         return Redirect::to('almacen/departamento');
+
+     }
+
+     public function pdf()
+     {
+        $departamentos=Departamento::all();
+
+          $pdf = PDF::loadView('almacen.departamento.invoice', compact('departamentos'));
+
+        return $pdf->stream('Departamentos.pdf');
+
 
      }
 

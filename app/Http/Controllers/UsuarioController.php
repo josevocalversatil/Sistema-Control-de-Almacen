@@ -9,6 +9,7 @@ use sisAlmacen1\Role;
 use Illuminate\Support\Facades\Redirect;
 use sisAlmacen1\Http\Requests\UsuarioFormRequest;
 use DB;
+use PDF;
 
 
 
@@ -97,6 +98,19 @@ class UsuarioController extends Controller
         return Redirect::to('almacen/usuario');
 
      }
+
+
+      public function pdf()
+     {
+        $usuarios=User::all();
+
+          $pdf = PDF::loadView('almacen.usuario.invoice', compact('usuarios'));
+
+        return $pdf->stream('Usuarios.pdf');
+
+
+     }
+
 
 
 }

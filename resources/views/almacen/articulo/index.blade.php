@@ -107,7 +107,7 @@
         </div>
 
       </div>
-      {{$articulos->render()}}
+  
       
     </div>
   </div>

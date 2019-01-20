@@ -8,6 +8,7 @@ use sisAlmacen1\Personal;
 use Illuminate\Support\Facades\Redirect;
 use sisAlmacen1\Http\Requests\PersonalFormRequest;
 use DB;
+use PDF;
 
 class PersonalController extends Controller
 {
@@ -115,4 +116,28 @@ class PersonalController extends Controller
 
      }
 
+   
+     public function pdf()
+{ 
+
+     $personales= Personal::
+        join('departamento as dep','personal.iddepartamento','=','dep.iddepartamento')
+        ->select('personal.idpersonal','personal.nombre','personal.telefono','personal.email','dep.nombre as departamento','personal.puesto') 
+        ->orderBy('personal.idpersonal','desc')
+    ->get();
+
+  $pdf=PDF::loadView("almacen.personal.invoice",["personales"=>$personales]);
+  return $pdf->stream("Personal.pdf");
+        
+
+
 }
+
+
+
+
+
+
+
+}
+
