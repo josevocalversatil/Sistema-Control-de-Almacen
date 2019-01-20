@@ -26,7 +26,7 @@ tfoot input {
                             <div class="box">
                                 <div class="box-header">
                                     <h3>Listado Memorandum's <a href="memo/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger">PDF</button></a></h3>
-                                   <!--@include('almacen.categoria.search')-->
+                                
                                    
             <div class="row">
 
@@ -153,7 +153,7 @@ tfoot input {
     </div>
 
       </div>
-      {{$memos->render()}}
+    
       
    </div>
 </div>

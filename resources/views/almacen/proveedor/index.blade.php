@@ -26,7 +26,7 @@ tfoot input {
                                 <div class="box-header">
                                     <h3>Listado de Proveedores <a href="proveedor/create"><button class="btn btn-success">Nuevo</button></a>
                                     Generar PDF <a href="{{url('proveedorpdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
-                                   <!--@include('almacen.categoria.search')-->
+                           
                                                                         
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
@@ -81,7 +81,7 @@ tfoot input {
     </div>
 
       </div>
-      {{$proveedores->render()}}
+   
 
     </div>
       
