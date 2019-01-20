@@ -51,4 +51,16 @@ Route::get('descargarPdfArticulos','ArticuloController@pdf');
 
 Route::get('categoriapdf','CategoriaController@pdf');
 
+Route::get('personalpdf','PersonalController@pdf');
+
+
+Route::get('departamentopdf','DepartamentoController@pdf');
+
+Route::get('proveedorpdf','ProveedorController@pdf');
+
+Route::get('usuariospdf','UsuarioController@pdf');
+
+Route::get('stmaximopdf','StmaximoController@pdf');
+
+Route::get('stminimopdf','StminimoController@pdf');
 

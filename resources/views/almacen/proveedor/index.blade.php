@@ -18,21 +18,22 @@
 
 </style>
 <section class="content">
+
   <div class="row">
     <div class="col-xs-12">
-
-
+      
+      
       <div class="box">
         <div class="box-header">
           <h3>Listado de Proveedores <a href="proveedor/create"><button class="btn btn-success">Nuevo</button></a>
-            Generar PDF <a href="#"><button class="btn btn-danger">PDF</button></a></h3>
-          
-
+            Generar PDF <a href="{{url('proveedorpdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
+            
+            
           </div><!-- /.box-header -->
           <div class="box-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
-
+               
                <th>Nombre</th>
                <th>Direccion</th>
                <th>Telefono</th>
@@ -45,8 +46,8 @@
 
              @foreach ($proveedores as $prov)
              <tr>
-
-
+               
+              
                <td>{{ $prov->nombre}}</td>
                <td>{{ $prov->direccion}}</td>
                <td>{{ $prov->telefono}}</td>
@@ -54,9 +55,8 @@
                <td>{{ $prov->razon_social}}</td>
                <td>{{ $prov->rfc}}</td>
                <td>
-                <a href="{{URL::action('ProveedorController@edit',$prov->idproveedor)}}"><button class="btn btn-info">Editar</button></a>
-                <a href="" data-target="#modal-delete-{{$prov->idproveedor}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
-
+                <a href="{{URL::action('ProveedorController@edit',$prov->idproveedor)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                <a href="" data-target="#modal-delete-{{$prov->idproveedor}}" data-toggle="modal" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></a>
               </td>
 
             </tr>
@@ -67,7 +67,7 @@
 
 
             <tfoot>
-
+             
               <th>Nombre</th>
               <th>Direccion</th>
               <th>Telefono</th>
@@ -77,12 +77,13 @@
               <th>Opciones</th> 
 
             </tfoot>
-
+            
           </table> 	
         </div>
+        >>>>>>> d72834d4e6a5357c43ffd7d22c440c7273126dc2
 
       </div>
-      {{$proveedores->render()}}
+      
 
     </div>
 

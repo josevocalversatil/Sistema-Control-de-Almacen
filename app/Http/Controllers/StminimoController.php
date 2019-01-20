@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use sisAlmacen1\Http\Requests\ArticuloFormRequest;
 use sisAlmacen1\Articulo;
 use DB;
+use PDF;
 
 
 class StminimoController extends Controller
@@ -53,6 +54,26 @@ class StminimoController extends Controller
 
 
     }
+
+
+
+    public function pdf()
+
+    {
+      
+   $articulos=DB::table('articulo')->whereColumn('stock','<=','stock_minimo')
+   ->orderBy('idarticulo','desc')  
+      ->paginate();
+
+
+           $pdf=PDF::loadView("almacen.stminimo.invoice",["articulos"=>$articulos]);
+  return $pdf->stream("stock Min.pdf");
+           
+
+    }
+
+
+
 }
 
 

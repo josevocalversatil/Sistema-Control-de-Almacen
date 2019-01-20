@@ -13,8 +13,8 @@
                             
                             <div class="box">
                                 <div class="box-header">
-                                    <h3>Listado de Articulos en Stock Maximo</h3>
-                                   <!--@include('almacen.categoria.search')-->
+                                     <h3>Listado de Articulos Stock Maximo.  </a> Generar PDF <a href="{{ url('stmaximopdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
+                               
                                                                         
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">

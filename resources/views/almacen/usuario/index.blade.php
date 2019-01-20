@@ -22,8 +22,8 @@ tfoot input {
                             
                             <div class="box">
                                 <div class="box-header">
-                                    <h3>Listado de Usuarios <a href="usuario/create"><button class="btn btn-success">Nuevo</button></a> </a> Generar PDF <a href="#"><button class="btn btn-danger">PDF</button></a></h3>
-                                   <!--@include('almacen.categoria.search')-->
+                                    <h3>Listado de Usuarios <a href="usuario/create"><button class="btn btn-success">Nuevo</button></a> </a> Generar PDF <a href="{{ url('usuariospdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
+                       
                                                                         
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
@@ -67,7 +67,7 @@ tfoot input {
     </div>
 
       </div>
-      {{$usuarios->render()}}
+    
       
    </div>
 </div>

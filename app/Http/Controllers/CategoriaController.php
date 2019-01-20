@@ -61,7 +61,7 @@ class CategoriaController extends Controller
 
         $pdf = PDF::loadView('almacen.categoria.invoice', compact('categorias'));
 
-        return $pdf->download('listado.pdf');
+        return $pdf->stream('listado.pdf');
     }
 
 

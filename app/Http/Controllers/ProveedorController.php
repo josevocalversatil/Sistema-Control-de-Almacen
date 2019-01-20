@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use sisAlmacen1\Http\Requests\ProveedorFormRequest;
 use sisAlmacen1\Proveedor;
 use DB;
+use PDF;
 
 class ProveedorController extends Controller
 {
@@ -118,6 +119,18 @@ class ProveedorController extends Controller
 
      }
 
+    
+
+        public function pdf()
+     {
+        $proveedores=Proveedor::all();
+
+          $pdf = PDF::loadView('almacen.proveedor.invoice', compact('proveedores'));
+
+        return $pdf->stream('Proveedores.pdf');
+
+
+     }
 
 
 

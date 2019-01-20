@@ -13,6 +13,7 @@
 
 </style>
 <section class="content">
+
   <div class="row">
     <div class="col-xs-12">
 
@@ -49,6 +50,7 @@
 
           </tr>
 
+
           <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR -->
           @include('almacen.departamento.modal')   	
           @endforeach
@@ -64,10 +66,11 @@
         </table> 
       </div>	
 
-    </div>
+</div>
 
 
-  </div>
+</div>
+
 </div>
 
 </section>

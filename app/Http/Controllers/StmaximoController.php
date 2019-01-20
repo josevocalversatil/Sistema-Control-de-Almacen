@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use sisAlmacen1\Http\Requests\ArticuloFormRequest;
 use sisAlmacen1\Articulo;
 use DB;
+use PDF;
 class StmaximoController extends Controller
 {
     
@@ -47,6 +48,20 @@ class StmaximoController extends Controller
      	
      }
 
+
+    }
+
+    public function pdf()
+
+    {
+      
+       $articulos=DB::table('articulo')->whereColumn('stock','>=','stock_maximo')
+    
+      ->orderBy('idarticulo','desc')
+      ->paginate();
+
+       $pdf=PDF::loadView("almacen.stmaximo.invoice",["articulos"=>$articulos]);
+  return $pdf->stream("stock Max.pdf");
 
     }
 

@@ -16,7 +16,6 @@
         <h3>Listado de Categorias <a href="categoria/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{url('categoriapdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
 
         Generar PDF <a href="{{url('descargarPdfArticulos') }}"><button class="btn btn-danger">PDF</button></a></h3>
-       
 
       </div><!-- /.box-header -->
 

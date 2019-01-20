@@ -27,10 +27,10 @@ tfoot input {
                             
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">Listado Articulos Stock Minimo.</h3>                                    
+                                     <h3>Listado de Articulos Stock Minimo.  </a> Generar PDF <a href="{{ url('stminimopdf') }}"><button class="btn btn-danger">PDF</button></a></h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped">
+                                    <table id="example1" class="table table-bordered table-striped" class="table-danger">
                                         <thead>
                                             
                                                 <th>Nombre</th>
