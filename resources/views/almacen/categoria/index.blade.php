@@ -16,8 +16,7 @@
         <h3>Listado de Categorias <a href="categoria/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{url('categoriapdf') }}"><button class="btn btn-danger">PDF</button></a></h3>
 
         Generar PDF <a href="{{url('descargarPdfArticulos') }}"><button class="btn btn-danger">PDF</button></a></h3>
-    
-        
+
       </div><!-- /.box-header -->
 
 
@@ -38,8 +37,8 @@
          <tbody>
           @foreach ($categorias as $cat)
           <tr>
-           
-            
+
+
             <td>{{ $cat->nombre}}</td>
             <td>{{ $cat->descripcion}}</td>
 
@@ -56,14 +55,14 @@
         </tbody>
         <tfoot>
           <tr>
-            
+
             <th>Nombre</th>
             <th>Descripcion</th>  
 
             <th>Opciones</th>
           </tr>
         </tfoot>
-        
+
       </table>
 
     </div><!-- /.box-body -->
