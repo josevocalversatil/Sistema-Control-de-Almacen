@@ -30,9 +30,6 @@
             Generar PDF <a href="{{url('descargarPdfArticulos') }}"><button class="btn btn-danger">PDF</button></a></h3>
 
 
-
-            <!--@include('almacen.categoria.search')-->
-
           </div><!-- /.box-header -->
           <div class="box-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
@@ -107,7 +104,11 @@
         </div>
 
       </div>
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ea57b8376e937639ad76ffbf048c01aa3200ddae
       
     </div>
   </div>

@@ -32,13 +32,13 @@ class CategoriaController extends Controller
      
      if ($request) {
      	
-     $query=trim($request->get('searchText'));
-     	$categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
+     
+     	$categorias=DB::table('categoria')
      	->where('condicion','=','1')
         ->orderBy('idcategoria','desc')->get();
 
        //###############################3 RUTA DEL INDEX DE CATEGORIA #################################
-     	return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
+     	return view('almacen.categoria.index',["categorias"=>$categorias]);
      }
 
 

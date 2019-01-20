@@ -53,6 +53,7 @@ Route::get('categoriapdf','CategoriaController@pdf');
 
 Route::get('personalpdf','PersonalController@pdf');
 
+<<<<<<< HEAD
 Route::get('departamentopdf','DepartamentoController@pdf');
 
 Route::get('proveedorpdf','ProveedorController@pdf');
@@ -63,3 +64,5 @@ Route::get('stmaximopdf','StmaximoController@pdf');
 
 Route::get('stminimopdf','StminimoController@pdf');
 
+=======
+>>>>>>> ea57b8376e937639ad76ffbf048c01aa3200ddae
