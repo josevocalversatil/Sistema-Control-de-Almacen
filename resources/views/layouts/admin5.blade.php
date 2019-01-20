@@ -219,7 +219,18 @@
         <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
 
 
-      
+
+        <!--PDF-->
+        <script src="{{asset('js/pdfmake.min.js')}}" type="text/javascript"></script>
+
+        <script src="{{asset('js/html2canvas.min.js')}}" type="text/javascript"></script>
+
+
+        <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+
+
+
+        
 
         <!-- page script -->
         <script type="text/javascript">

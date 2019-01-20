@@ -85,18 +85,18 @@
                                 <li class="user-footer">
 
                                     <div class="pull-right">
-                                       <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
-                                   </div>
-                               </li>
-                           </ul>
-                       </li>
-                   </ul>
-               </div>
-           </nav>
-       </header>
+                                     <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
+                                 </div>
+                             </li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+         </nav>
+     </header>
 
 
-       <div class="wrapper row-offcanvas row-offcanvas-left">
+     <div class="wrapper row-offcanvas row-offcanvas-left">
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-side sidebar-offcanvas">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -262,8 +262,23 @@
 
        <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
 
+
+
        
-   
+
+       <!--PDF-->
+       <script src="{{asset('js/pdfmake.min.js')}}" type="text/javascript"></script>
+
+       <script src="{{asset('js/html2canvas.min.js')}}" type="text/javascript"></script>
+
+
+       <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+
+
+
+
+       
+       
 
 
        <script type="text/javascript">
@@ -308,9 +323,9 @@
         var ftotal = parseFloat( data[1] ) || 0; // use data for the age column
 
         if ( ( isNaN( fmin ) && isNaN( fmax ) ) ||
-           ( isNaN( fmin ) && ftotal <= fmax ) ||
-           ( fmin <= ftotal   && isNaN( fmax ) ) ||
-           ( fmin <= ftotal   && ftotal <= fmax ) )
+         ( isNaN( fmin ) && ftotal <= fmax ) ||
+         ( fmin <= ftotal   && isNaN( fmax ) ) ||
+         ( fmin <= ftotal   && ftotal <= fmax ) )
         {
             return true;
         }
@@ -334,9 +349,9 @@
         var metotal = parseFloat( data[3] ) || 0; // use data for the age column
 
         if ( ( isNaN( memin ) && isNaN( memax ) ) ||
-           ( isNaN( memin ) && metotal <= memax ) ||
-           ( memin <= metotal   && isNaN( memax ) ) ||
-           ( memin <= metotal   && metotal <= memax ) )
+         ( isNaN( memin ) && metotal <= memax ) ||
+         ( memin <= metotal   && isNaN( memax ) ) ||
+         ( memin <= metotal   && metotal <= memax ) )
         {
             return true;
         }
@@ -359,9 +374,9 @@
                 var total = parseFloat( data[6] ) || 0; 
 
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
-                   ( isNaN( min ) && total <= max ) ||
-                   ( min <= total   && isNaN( max ) ) ||
-                   ( min <= total   && total <= max ) )
+                 ( isNaN( min ) && total <= max ) ||
+                 ( min <= total   && isNaN( max ) ) ||
+                 ( min <= total   && total <= max ) )
                 {
                     return true;
                 }

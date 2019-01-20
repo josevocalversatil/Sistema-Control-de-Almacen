@@ -84,18 +84,18 @@
                                 <li class="user-footer">
 
                                     <div class="pull-right">
-                                     <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
-                                 </div>
-                             </li>
-                         </ul>
-                     </li>
-                 </ul>
-             </div>
-         </nav>
-     </header>
+                                       <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
+                                   </div>
+                               </li>
+                           </ul>
+                       </li>
+                   </ul>
+               </div>
+           </nav>
+       </header>
 
 
-     <div class="wrapper row-offcanvas row-offcanvas-left">
+       <div class="wrapper row-offcanvas row-offcanvas-left">
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-side sidebar-offcanvas">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -260,8 +260,19 @@
 
 
        <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
-      
-     
+       
+       
+
+       <!--PDF-->
+       <script src="{{asset('js/pdfmake.min.js')}}" type="text/javascript"></script>
+
+       <script src="{{asset('js/html2canvas.min.js')}}" type="text/javascript"></script>
+
+
+       <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+
+
+
 
 
        <script type="text/javascript">
@@ -313,9 +324,9 @@
         var mestotal = parseFloat( data[1] ) || 0; // use data for the age column
 
         if ( ( isNaN( mesmin ) && isNaN( mesmax ) ) ||
-         ( isNaN( mesmin ) && metotal <= mesmax ) ||
-         ( mesmin <= mestotal   && isNaN( mesmax ) ) ||
-         ( mesmin <= mestotal   && mestotal <= mesmax ) )
+           ( isNaN( mesmin ) && metotal <= mesmax ) ||
+           ( mesmin <= mestotal   && isNaN( mesmax ) ) ||
+           ( mesmin <= mestotal   && mestotal <= mesmax ) )
         {
             return true;
         }
@@ -391,19 +402,6 @@
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>  
-
-
-<!--PDF -->
-
-<script src="{{asset('plugins/tableExport.js')}}" type="text/javascript"></script>
-<script src="{{asset('plugins/jquery.base64.js')}}" type="text/javascript"></script>
-
-
-<script type="text/javascript" src="{{asset{{('ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')}}"></script>
-<script src="{{asset('plugins/jspdf/libs/sprintf.js')}}" type="text/javascript"></script>
-<script src="{{asset('plugins/jspdf/jspdf.js')}}" type="text/javascript"></script>
-
-<script src="{{asset('plugins/jspdf/libs/base64.js')}}" type="text/javascript"></script>
 
 
 

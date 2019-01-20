@@ -34,11 +34,10 @@
 
     <div class="box">
       <div class="box-header">
-        <h3> Listado Entrada de Articulos  <i class="glyphicon glyphicon-shopping-cart"></i> <a href="ingreso/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger" >PDF</button></a></h3>
+        <h3> Listado Entrada de Articulos  <i class="glyphicon glyphicon-shopping-cart"></i> <a href="ingreso/create"><button class="btn btn-success">Nuevo</button></a> Generar PDF <a href="{{ url('#') }}"><button class="btn btn-danger"  id="btnExport" value="Export" onclick="ocultar();exportar_mostrar();" >PDF</button></a></h3>
 
 
-        <input type="button" id="btnExport" value="Export" onclick="ocultar();exportar_mostrar();" />
-
+       
 
         
         
@@ -218,49 +217,6 @@
 </section>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-<script type="text/javascript">
-  function Export() {
-    html2canvas(document.getElementById('example'), {
-      onrendered: function (canvas) {
-        var data = canvas.toDataURL();
-        var docDefinition = {
-          content: [{
-            image: data,
-            width: 500
-          }]
-        };
-        pdfMake.createPdf(docDefinition).download("Table.pdf");
-      }
-    });
 
-  }
-
-
-  function ocultar(){
-
-    $("#example thead th.opciones").hide(); 
-    $("#example tbody td.opciones").hide(); 
-    $("#example tfoot th.opciones").hide(); 
-  }
-
-  function mostrar(){
-
-    $("#example thead th.opciones").show(); 
-    $("#example tbody td.opciones").show(); 
-    $("#example tfoot th.opciones").show(); 
-  }
-
-
-  function exportar_mostrar(){
-    Export();
-    window.setTimeout("mostrar()",1500);
-
- 
-  }
-
-
-</script>
 
 @endsection 

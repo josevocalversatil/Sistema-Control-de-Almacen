@@ -87,18 +87,18 @@
                                 <li class="user-footer">
 
                                     <div class="pull-right">
-                                       <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
-                                   </div>
-                               </li>
-                           </ul>
-                       </li>
-                   </ul>
-               </div>
-           </nav>
-       </header>
+                                     <center><a  href="{{url('/logout')}}" class="btn btn-default btn-flat" >Salir</a></center>   
+                                 </div>
+                             </li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+         </nav>
+     </header>
 
 
-       <div class="wrapper row-offcanvas row-offcanvas-left">
+     <div class="wrapper row-offcanvas row-offcanvas-left">
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-side sidebar-offcanvas">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -266,6 +266,21 @@
 
 
 
+       
+
+       <!--PDF-->
+       <script src="{{asset('js/pdfmake.min.js')}}" type="text/javascript"></script>
+
+       <script src="{{asset('js/html2canvas.min.js')}}" type="text/javascript"></script>
+
+
+       <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+
+
+
+
+
+
        <script type="text/javascript">
 
 
@@ -340,9 +355,9 @@
         var fototal = parseFloat( data[1] ) || 0; // use data for the age column
 
         if ( ( isNaN( fomin ) && isNaN( fomax ) ) ||
-           ( isNaN( fomin ) && fototal <= fomax ) ||
-           ( fomin <= fototal   && isNaN( fomax ) ) ||
-           ( fomin <= fototal   && fototal <= fomax ) )
+         ( isNaN( fomin ) && fototal <= fomax ) ||
+         ( fomin <= fototal   && isNaN( fomax ) ) ||
+         ( fomin <= fototal   && fototal <= fomax ) )
         {
             return true;
         }
@@ -366,9 +381,9 @@
         var numtotal = parseFloat( data[2] ) || 0; // use data for the age column
 
         if ( ( isNaN( nummin ) && isNaN( nummax ) ) ||
-           ( isNaN( nummin ) && numtotal <= nummax ) ||
-           ( nummin <= numtotal   && isNaN( nummax ) ) ||
-           ( nummin <= numtotal   && numtotal <= nummax ) )
+         ( isNaN( nummin ) && numtotal <= nummax ) ||
+         ( nummin <= numtotal   && isNaN( nummax ) ) ||
+         ( nummin <= numtotal   && numtotal <= nummax ) )
         {
             return true;
         }
