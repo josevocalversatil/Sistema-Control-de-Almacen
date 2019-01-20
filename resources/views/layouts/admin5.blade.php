@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>AdminLTE | Data Tables</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <!-- bootstrap 3.0.2 -->
-        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-        <!-- font Awesome -->
-        <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-        <!-- Ionicons -->
-        <link href="{{asset('css/ionicons.min.css')}}" rel="stylesheet" type="text/css" />
-        <!-- DATA TABLES -->
-        <link href="{{asset('css/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
-        <link href="{{asset('css/AdminLTE.css')}}" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="UTF-8">
+    <title>AdminLTE | Data Tables</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="{{asset('css/ionicons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- DATA TABLES -->
+    <link href="{{asset('css/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="{{asset('css/AdminLTE.css')}}" rel="stylesheet" type="text/css" />
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body class="skin-blue">
+          <![endif]-->
+      </head>
+      <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="../../index.html" class="logo">
@@ -41,8 +41,8 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                   
- <!-- User Account: style can be found in dropdown.less -->
+
+                        <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
@@ -105,7 +105,7 @@
                     </form>
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
-                     <ul class="sidebar-menu">
+                    <ul class="sidebar-menu">
                         <li class="active">
                             <a href="{{'/home'}}">
                                 <i class="fa fa-home"></i> <span>Inicio</span>
@@ -132,8 +132,8 @@
                             </ul>
                         </li>
 
-                     
-                      
+
+
 
                         <li class="treeview">
                             <a href="#">
@@ -148,8 +148,8 @@
                             </ul>
                         </li>
 
-                       
-                         <li class="treeview">
+
+                        <li class="treeview">
                             <a href="#">
                                 <i class="glyphicon glyphicon-shopping-cart"></i>
                                 <span>Gestion Articulos</span>
@@ -164,20 +164,20 @@
                             </ul>
                         </li>
 
-                         <li>
+                        <li>
                             <a href="#">
                                 <i class="fa fa-question-circle"></i> <span>Ayuda. ?</span> 
                             </a>
                         </li>
 
-                         <li>
+                        <li>
                             <a href="#">
                                 <i class="fa fa-info-circle"></i> <span>Acerca De..</span> 
                             </a>
                         </li>
-                       
-                      
-                       
+
+
+
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -199,8 +199,8 @@
                 </section>
 
                 <!-- Main content -->
-              
-                 @yield('contenido')
+
+                @yield('contenido')
 
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -209,7 +209,7 @@
         <!-- jQuery 2.0.2 -->
         <script src="{{asset('js/jquery.min.js')}}"></script>
 
-    
+
         <!-- Bootstrap -->
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
         <!-- DATA TABES SCRIPT -->
@@ -217,6 +217,9 @@
         <script src="{{asset('js/plugins/datatables/dataTables.bootstrap.js')}}" type="text/javascript"></script>
         <!-- AdminLTE App -->
         <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
+
+
+      
 
         <!-- page script -->
         <script type="text/javascript">
@@ -240,24 +243,24 @@
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
- 
+
     // DataTable
     var table = $('#example1').DataTable();
- 
+
     // Apply the search
     table.columns().every( function () {
         var that = this;
- 
+
         $( 'input', this.footer() ).on( 'keyup change', function () {
             if ( that.search() !== this.value ) {
                 that
-                    .search( this.value )
-                    .draw();
+                .search( this.value )
+                .draw();
             }
         } );
     } );
 } );
-        </script>
+</script>
 
-    </body>
+</body>
 </html>
