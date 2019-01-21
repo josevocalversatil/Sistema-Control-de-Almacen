@@ -41,96 +41,118 @@
 
         
         
-        <!--@include('almacen.categoria.search')-->
+     
         <div class="row">
 
 
           <!--  fecha -->
 
+            <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarIngresoFecha')}}" method="post" >
+                    {{csrf_field()}}
+
+                    <h5>Buscar por Rango (Fechas) </h5>
+
+                    <tr>
+                     <td>Fecha Min:</td>
+                     <td><input name="fechaMin" type="text" id="damin" name="damin"></td>
+                   </tr>
+                   <tr>
+                    <td>Fecha Max:</td>
+                    <td><input name="fechaMax" type="text" id="damax" name="damax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
+
+               </form>
+             </div>
+           </div>
+         </div>
 
 
-          <div class=" col-xs-6">
-            <div class="panel panel-primary">
-              <div class="panel-body">
+        <div id="divRangoFactura" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarIngresoFactura')}}" method="post" >
+                    {{csrf_field()}}
 
-                <h5>Buscar por Rango (Fechas) </h5>
+                    <h5>Buscar por Rango (# Factura) </h5>
 
-                <tr>
-                 <td>F Minimo:</td>
-                 <td><input type="text" id="damin" name="damin"></td>
-               </tr>
-               <tr>
-                <td>F Maximo:</td>
-                <td><input type="text" id="damax" name="damax"></td>
-              </tr>
-            </div>
-          </div>
-        </div>
+                    <tr>
+                     <td>Factura Min:</td>
+                     <td><input name="facturaMinimo" type="text" id="fmin" name="fmin"></td>
+                   </tr>
+                   <tr>
+                    <td>Factura Max:</td>
+                    <td><input name="facturaMaximo" type="text" id="fmax" name="fmax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
 
-
-        <!--  factura-->
-        <div class=" col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-body">
-
-
-             <h5>Buscar por Rango (# Factura) </h5>
-
-             <tr>
-               <td> Factura Min:</td>
-               <td><input type="text" id="fmin" name="fmin"></td>
-             </tr>
-             <tr>
-              <td> Factura Max:</td>
-              <td><input type="text" id="fmax" name="fmax"></td>
-            </tr>
-
-          </div>
-        </div>
-      </div>
-
-      <!--  memo -->
-      <div class=" col-xs-6">
-        <div class="panel panel-primary">
-          <div class="panel-body">
+               </form>
+             </div>
+           </div>
+         </div>
 
 
-           <h5>Buscar por Rango (# Memo) </h5>
+       <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarIngresoMemo')}}" method="post" >
+                    {{csrf_field()}}
 
-           <tr>
-             <td> Memo Min:</td>
-             <td><input type="text" id="memin" name="memin"></td>
-           </tr>
-           <tr>
-            <td> Memo Max:</td>
-            <td><input type="text" id="memax" name="memax"></td>
-          </tr>
+                    <h5>Buscar por Rango (# Memo) </h5>
 
-        </div>
-      </div>
-    </div>
+                    <tr>
+                     <td>Memo Min:</td>
+                     <td><input name="memoMinimo" type="text" id="memin" name="memin"></td>
+                   </tr>
+                   <tr>
+                    <td>Memo Max:</td>
+                    <td><input name="memoMaximo" type="text" id="memax" name="memax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
 
-    <!--  totales -->
-    <div class=" col-xs-6">
-      <div class="panel panel-primary">
-        <div class="panel-body">
+               </form>
+             </div>
+           </div>
+         </div>
 
 
-         <h5>Buscar por Rango (Totales) </h5>
+         <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarIngresoTotal')}}" method="post" >
+                    {{csrf_field()}}
 
-         <tr>
-           <td> Total Minimo:</td>
-           <td><input type="text" id="min" name="min"></td>
-         </tr>
-         <tr>
-          <td> Total Maximo:</td>
-          <td><input type="text" id="max" name="max"></td>
-        </tr>
+                    <h5>Buscar por Rango (Totales) </h5>
 
-      </div>
-    </div>
-  </div>
+                    <tr>
+                     <td>Total Min:</td>
+                     <td><input name="totalMin" type="text" id="min" name="min"></td>
+                   </tr>
+                   <tr>
+                    <td>Total Max:</td>
+                    <td><input name="totalMax" type="text" id="max" name="max"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
 
+               </form>
+             </div>
+           </div>
+         </div>
 
 
 

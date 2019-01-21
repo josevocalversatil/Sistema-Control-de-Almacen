@@ -88,12 +88,58 @@
                       <td><input name="memoMaximo" type="text" id="mesmax" name="mesmax"></td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
                       <button class="btn btn-primary" type="submit">Buscar</button>
                     </tr>
                   </form>
                 </div>
               </div>
             </div>
+=======
+                     <td>Fecha Min:</td>
+                     <td><input name="fechaMin" type="text" id="dasmin" name="dasmin"></td>
+                   </tr>
+                   <tr>
+                    <td>Fecha Max:</td>
+                    <td><input name="fechaMax" type="text" id="dasmax" name="dasmax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
+
+               </form>
+             </div>
+           </div>
+         </div>
+
+
+
+         <div id="divRangoMemos" class=" col-xs-6">
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <form  role="form" action="{{url('/descargarSalidaMemo')}}" method="post" >
+                {{csrf_field()}}
+                <h5>Buscar por Rango(#Memo) </h5>
+
+                <tr>
+                 <td> Memo Min:</td>
+                 <td><input name="memoMinimo" type="text" id="mesmin" name="mesmin"></td>
+               </tr>
+               <tr>
+                <td> Memo Max:</td>
+                <td><input name="memoMaximo" type="text" id="mesmax" name="mesmax"></td>
+              </tr>
+
+              <tr>
+               <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+             </tr>
+           </form>
+
+         </div>
+       </div>
+     </div>
+>>>>>>> 6c330ad052023972f5c668f5c7e2fbe5d0d5f649
 
 
           </div>                          

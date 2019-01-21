@@ -12,6 +12,7 @@ use sisAlmacen1\DetalleMemo;
 use sisAlmacen1\Ingreso;
 use sisAlmacen1\DetalleIngreso;
 use DB;
+use PDF;
 
 //para usar la fecha 
 use Carbon\Carbon;
@@ -155,6 +156,28 @@ public function destroy($id)
 } 
 
 
+public function pdf($id)
+{
+     $memo=DB::table('memo as m')
+    
+    ->join('personal as pe','m.idpersonal','=','pe.idpersonal')
+    ->join('personal as per','m.idpersonal2','=','per.idpersonal')
+    ->join('detalle_memo as dm','m.idmemo','=','dm.idmemo')
+     ->join('departamento as dep','m.iddepartamento','=','dep.iddepartamento')
+     ->select('m.idmemo','m.fecha_hora','pe.nombre as personal3','dep.nombre as depa','per.nombre as personal4','m.folio_memo','m.numero_memo')
+     ->where('m.idmemo','=',$id)
+     ->groupBy('m.idmemo','m.fecha_hora','pe.nombre','dep.nombre','per.nombre','m.folio_memo','m.numero_memo')
+     ->first();
 
+     $detalles=DB::table('detalle_memo as d')
+     ->join('articulo as a','d.idarticulo','=','a.idarticulo' )
+     ->select('a.nombre as articulo','d.cantidad','d.unidad_medida')
+     ->where('d.idmemo','=',$id)
+     ->get();
+
+
+      $pdf=PDF::loadView("almacen.memo.invoice",['memo'=>$memo,"detalles"=>$detalles]);
+ return $pdf->stream("Memo.pdf");
+}
 
 }
