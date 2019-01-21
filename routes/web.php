@@ -68,3 +68,6 @@ Route::get('stminimopdf','StminimoController@pdf');
 
 Route::get('salidapdf/{id}','SalidaController@pdf');
 
+
+Route::post('/descargarSalidaFecha','SalidaController@pdfFechas');
+
