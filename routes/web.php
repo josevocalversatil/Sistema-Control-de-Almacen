@@ -76,4 +76,12 @@ Route::get('memopdf/{id}','MemoController@pdf');
 
 Route::post('/descargarSalidaFecha','SalidaController@pdfFechas');
 
+Route::post('/descargarSalidaMemo','SalidaController@pdfMemos');
 
+Route::post('/descargarIngresoFecha','IngresoController@pdfFechas');
+
+Route::post('/descargarIngresoFactura','IngresoController@pdfFactura');
+
+Route::post('/descargarIngresoMemo','IngresoController@pdfMemo');
+
+Route::post('/descargarIngresoTotal','IngresoController@pdfTotal');
