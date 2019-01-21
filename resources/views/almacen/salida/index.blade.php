@@ -88,30 +88,15 @@
                       <td><input name="memoMaximo" type="text" id="mesmax" name="mesmax"></td>
                     </tr>
                     <tr>
-<<<<<<< HEAD
+
                       <button class="btn btn-primary" type="submit">Buscar</button>
                     </tr>
                   </form>
                 </div>
               </div>
             </div>
-=======
-                     <td>Fecha Min:</td>
-                     <td><input name="fechaMin" type="text" id="dasmin" name="dasmin"></td>
-                   </tr>
-                   <tr>
-                    <td>Fecha Max:</td>
-                    <td><input name="fechaMax" type="text" id="dasmax" name="dasmax"></td>
-                  </tr>
-                  <tr>
-                  
-                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
-                 </tr>
 
-               </form>
-             </div>
-           </div>
-         </div>
+                   
 
 
 
@@ -139,10 +124,7 @@
          </div>
        </div>
      </div>
->>>>>>> 6c330ad052023972f5c668f5c7e2fbe5d0d5f649
-
-
-          </div>                          
+                     
 
 
         </div><!-- /.box-header -->

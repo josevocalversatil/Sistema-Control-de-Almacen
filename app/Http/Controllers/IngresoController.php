@@ -223,8 +223,8 @@ public function pdfFechas(Request $request)
  ->get();
 
 
-  $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoFecha",['memos'=>$memos,'ingreso'=>$ingreso]);
-  return $pdf->stream("Ingreso.pdf");
+ $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoFecha",['memos'=>$memos,'ingreso'=>$ingreso]);
+ return $pdf->stream("Ingreso.pdf");
 
 }
 
@@ -235,19 +235,19 @@ public function pdfFactura(Request $request)
   $facturaMaximo=$request->get('facturaMaximo');
 
   $ingreso=DB::table('ingreso as i')
- ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
- ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
- ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
- ->join('personal as per','i.idpersonal2','=','per.idpersonal')
- ->join('memo as m','i.idmemo','=','m.idmemo')
- ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
+  ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
+  ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
+  ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
+  ->join('personal as per','i.idpersonal2','=','per.idpersonal')
+  ->join('memo as m','i.idmemo','=','m.idmemo')
+  ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
   ->where('i.numero_factura', '>=',$facturaMinimo)
   ->where('i.numero_factura', '<=',$facturaMaximo)
   ->orderBy('i.idingreso','desc')
- ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
- ->get();
+  ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
+  ->get();
 
-   $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoFactura",['ingreso'=>$ingreso]);
+  $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoFactura",['ingreso'=>$ingreso]);
   return $pdf->stream("Ingreso.pdf");
 }
 
@@ -260,19 +260,19 @@ public function pdfMemo(Request $request)
   $memoMaximo=$request->get('memoMaximo');
 
   $ingreso=DB::table('ingreso as i')
- ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
- ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
- ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
- ->join('personal as per','i.idpersonal2','=','per.idpersonal')
- ->join('memo as m','i.idmemo','=','m.idmemo')
- ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
+  ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
+  ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
+  ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
+  ->join('personal as per','i.idpersonal2','=','per.idpersonal')
+  ->join('memo as m','i.idmemo','=','m.idmemo')
+  ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
   ->where('m.folio_memo', '>=',$memoMinimo)
   ->where('m.folio_memo', '<=',$memoMaximo)
   ->orderBy('i.idingreso','desc')
- ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
- ->get();
+  ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
+  ->get();
 
-   $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoMemo",['ingreso'=>$ingreso]);
+  $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoMemo",['ingreso'=>$ingreso]);
   return $pdf->stream("Ingreso.pdf");
 }
 
@@ -284,20 +284,20 @@ public function pdfTotal(Request $request)
   $totalMaximo=$request->get('totalMax');
 
   $ingreso=DB::table('ingreso as i')
- ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
- ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
- ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
- ->join('personal as per','i.idpersonal2','=','per.idpersonal')
- ->join('memo as m','i.idmemo','=','m.idmemo')
- ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
+  ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
+  ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
+  ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
+  ->join('personal as per','i.idpersonal2','=','per.idpersonal')
+  ->join('memo as m','i.idmemo','=','m.idmemo')
+  ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
 
-  ->having('SUM(di.cantidad*precio_unitario)','>=',$totalMinimo)
-  ->having('SUM(di.cantidad*precio_unitario)','<=',$totalMaximo)
+  ->having(DB::raw('sum(di.cantidad*precio_unitario)'),'>=',  $totalMinimo)
+  ->having(DB::raw('sum(di.cantidad*precio_unitario)'),'<=',$totalMaximo)
   ->orderBy('i.idingreso','desc')
- ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
- ->get();
+  ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
+  ->get();
 
-   $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoTotal",['ingreso'=>$ingreso]);
+  $pdf=PDF::loadView("almacen.ingreso.invoiceIngresoMemo",['ingreso'=>$ingreso]);
   return $pdf->stream("Ingreso.pdf");
 }
 
