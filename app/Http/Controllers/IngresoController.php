@@ -14,6 +14,7 @@ use sisAlmacen1\DetalleIngreso;
 use sisAlmacen1\Memo;
 use sisAlmacen1\DetalleMemo;
 use DB;
+use PDF;
 
 //para usar la fecha 
 use Carbon\Carbon;
@@ -167,6 +168,35 @@ public function destroy($id)
 	$ingreso->update();
 	return Redirect::to('almacen/ingreso');
 } 
+
+
+public function pdf($id)
+{
+    $memos=DB::table('memo')->get();
+     $ingreso=DB::table('ingreso as i')
+
+
+     ->join('proveedor as p','i.idproveedor','=','p.idproveedor')
+     ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
+     ->join('personal as pe','i.idpersonal','=','pe.idpersonal')
+     ->join('personal as per','i.idpersonal2','=','per.idpersonal')
+     ->join('memo as m','i.idmemo','=','m.idmemo')
+   
+    ->select('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre as proveedor','pe.nombre as personal3','per.nombre as personal4','m.folio_memo','i.estado',DB::raw('sum(di.cantidad*precio_unitario) as total'))
+     ->where('i.idingreso','=',$id)
+     ->groupBy('i.idingreso','i.fecha_hora','i.numero_factura','p.nombre','pe.nombre','per.nombre','m.folio_memo','i.estado')
+     ->first();
+
+     $detalles=DB::table('detalle_ingreso as d')
+     ->join('articulo as a','d.idarticulo','=','a.idarticulo' )
+     ->select('a.nombre as articulo','d.cantidad','d.precio_unitario','d.precio_total')
+     ->where('d.idingreso','=',$id)
+     ->get();
+     
+     
+     $pdf=PDF::loadView("almacen.ingreso.invoice",['memos'=>$memos,'ingreso'=>$ingreso,"detalles"=>$detalles]);
+     return $pdf->stream("Ingreso.pdf"); 
+}
 
 
 }

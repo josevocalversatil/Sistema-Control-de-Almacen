@@ -68,3 +68,5 @@ Route::get('stminimopdf','StminimoController@pdf');
 
 Route::get('salidapdf/{id}','SalidaController@pdf');
 
+Route::get('ingresopdf/{id}','IngresoController@pdf');
+
