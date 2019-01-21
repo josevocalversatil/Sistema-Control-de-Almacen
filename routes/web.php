@@ -71,3 +71,5 @@ Route::get('salidapdf/{id}','SalidaController@pdf');
 
 Route::post('/descargarSalidaFecha','SalidaController@pdfFechas');
 
+
+Route::post('/descargarSalidaMemo','SalidaController@pdfMemos');

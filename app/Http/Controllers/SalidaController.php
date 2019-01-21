@@ -195,17 +195,11 @@ public function pdf($id)
 
 public function pdfFechas(Request $request)
 {
- // echo $request->get('fechaMin');
- // echo $request->get('fechaMax');
 
   $fechaMin=strtotime($request->get('fechaMin'));
-
   $fechaMin= date('Y-m-d',$fechaMin);
-
   $fechaMax=strtotime($request->get('fechaMax'));
-
   $fechaMax= date('Y-m-d',$fechaMax);
-
   $salidas=DB::table('salida as s')
   ->join('personal as pe','s.idpersonal','=','pe.idpersonal')
   ->join('personal as per','s.idpersonal2','=','per.idpersonal')
@@ -217,16 +211,39 @@ public function pdfFechas(Request $request)
   ->orderBy('s.idsalida','desc')
   ->groupBy('s.idsalida','s.fecha_hora','pe.nombre','dep.nombre','per.nombre','m.folio_memo','s.estado')
   ->get();
-
   $pdf=PDF::loadView("almacen.salida.invoiceSalidaFecha",["salidas"=>$salidas]);
   return $pdf->stream("SalidaRangoFechas.pdf");
-
-
-
-
-
-
 }
+
+
+
+public function pdfMemos(Request $request)
+{
+
+  $memoMinimo=$request->get('memoMinimo');
+  $memoMaximo=$request->get('memoMaximo');
+
+  $salidas=DB::table('salida as s')
+  ->join('personal as pe','s.idpersonal','=','pe.idpersonal')
+  ->join('personal as per','s.idpersonal2','=','per.idpersonal')
+  ->join('memo as m','s.idmemo','=','m.idmemo')
+  ->join('detalle_salida as ds','s.idsalida','=','ds.idsalida')
+  ->join('departamento as dep','s.iddepartamento','=','dep.iddepartamento')
+  ->select('s.idsalida','s.fecha_hora','pe.nombre as personal3','dep.nombre as depa','per.nombre as personal4','m.folio_memo','s.estado')
+  ->where('s.idmemo', '>=', $memoMinimo)
+  ->where('s.idmemo', '<=', $memoMaximo)
+  ->orderBy('s.idsalida','desc')
+  ->groupBy('s.idsalida','s.fecha_hora','pe.nombre','dep.nombre','per.nombre','m.folio_memo','s.estado')
+  ->get();
+  $pdf=PDF::loadView("almacen.salida.invoiceSalidaFecha",["salidas"=>$salidas]);
+  return $pdf->stream("SalidaRangoFechas.pdf");
+}
+
+
+
+
+
+
 
 
 }

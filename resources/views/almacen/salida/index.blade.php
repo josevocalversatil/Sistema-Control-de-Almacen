@@ -29,7 +29,7 @@
             <div id="divRangoFechas" class=" col-xs-6">
               <div class="panel panel-primary">
                 <div class="panel-body">
-                <form  role="form" action="{{url('/descargarSalidaFecha')}}" method="post" >
+                  <form  role="form" action="{{url('/descargarSalidaFecha')}}" method="post" >
                     {{csrf_field()}}
 
                     <h5>Buscar por Rango (Fechas) </h5>
@@ -43,7 +43,7 @@
                     <td><input name="fechaMax" type="text" id="dasmax" name="dasmax"></td>
                   </tr>
                   <tr>
-                   <button class="btn btn-primary" type="submit">Guardar</button>
+                   <button class="btn btn-primary" type="submit">Buscar</button>
                  </tr>
 
                </form>
@@ -56,80 +56,84 @@
          <div id="divRangoMemos" class=" col-xs-6">
           <div class="panel panel-primary">
             <div class="panel-body">
+              <form  role="form" action="{{url('/descargarSalidaMemo')}}" method="post" >
+                {{csrf_field()}}
+                <h5>Buscar por Rango(#Memo) </h5>
 
-              <form>
-               <h5>Buscar por Rango(#Memo) </h5>
-
-               <tr>
+                <tr>
                  <td> Memo Min:</td>
-                 <td><input type="text" id="mesmin" name="mesmin"></td>
+                 <td><input name="memoMinimo" type="text" id="mesmin" name="mesmin"></td>
                </tr>
                <tr>
                 <td> Memo Max:</td>
-                <td><input type="text" id="mesmax" name="mesmax"></td>
+                <td><input name="memoMaximo" type="text" id="mesmax" name="mesmax"></td>
               </tr>
-            </form>
 
-          </div>
-        </div>
-      </div>
+              <tr>
+              <button class="btn btn-primary" type="submit">Buscar</button>
+             </tr>
+           </form>
 
-
-    </div>                          
-
-
-
-
-  </div><!-- /.box-header -->
-  <div class="box-body table-responsive">
-    <table id="example2" class="table table-bordered table-striped">
-      <thead>
-
-       <th>Fecha</th>
-       <th># Memo</th>
-       <th>Autoriza</th>
-       <th>Recibe</th>
-       <th>Departamento</th>
-       <th>Estado</th>
-       <th class="opciones">Opciones</th>
-
-     </thead>
-
-     @foreach ($salidas as $sa) 
-     <tr>
+         </div>
+       </div>
+     </div>
 
 
-       <td>{{ $sa->fecha_hora}}</td>
-       <td>{{ $sa->folio_memo}}</td>
-       <td>{{ $sa->personal3}}</td>
-       <td>{{ $sa->personal4}}</td>
-       <td>{{ $sa->depa}}</td>
-       <td>{{ $sa->estado}}</td> 
+   </div>                          
 
-       <td  class="opciones">
-        <a href="{{URL::action('SalidaController@show',$sa->idsalida)}}"><button class="btn btn-primary">Detalles</button></a>
-        <a href="" data-target="#modal-delete-{{$sa->idsalida}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
 
-      </td>
 
-    </tr>
 
-    <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR -->
-    @include('almacen.salida.modal')   	
-    @endforeach
+ </div><!-- /.box-header -->
+ <div class="box-body table-responsive">
+  <table id="example2" class="table table-bordered table-striped">
+    <thead>
 
-    <tfoot>
-      <th>Fecha</th>
-      <th># Memo</th>
-      <th>Autoriza</th>
-      <th>Recibe</th>
-      <th>Departamento</th>
-      <th>Estado</th>
-      <th class="opciones">Opciones</th>
+     <th>Fecha</th>
+     <th># Memo</th>
+     <th>Autoriza</th>
+     <th>Recibe</th>
+     <th>Departamento</th>
+     <th>Estado</th>
+     <th class="opciones">Opciones</th>
 
-    </tfoot>
+   </thead>
 
-  </table> 	
+   @foreach ($salidas as $sa) 
+   <tr>
+
+
+     <td>{{ $sa->fecha_hora}}</td>
+     <td>{{ $sa->folio_memo}}</td>
+     <td>{{ $sa->personal3}}</td>
+     <td>{{ $sa->personal4}}</td>
+     <td>{{ $sa->depa}}</td>
+     <td>{{ $sa->estado}}</td> 
+
+     <td  class="opciones">
+      <a href="{{URL::action('SalidaController@show',$sa->idsalida)}}"><button class="btn btn-primary">Detalles</button></a>
+      <a href="" data-target="#modal-delete-{{$sa->idsalida}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
+
+    </td>
+
+  </tr>
+
+  <!-- ESTE ES PARA INCLUIR EL MODAL PARA ELIMINAR -->
+  @include('almacen.salida.modal')   	
+  @endforeach
+
+  <tfoot>
+    <th>Fecha</th>
+    <th># Memo</th>
+    <th>Autoriza</th>
+    <th>Recibe</th>
+    <th>Departamento</th>
+    <th>Estado</th>
+    <th class="opciones">Opciones</th>
+
+  </tfoot>
+
+</table> 	
 </div>
 
 </div>
