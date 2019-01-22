@@ -193,7 +193,7 @@
                 </li>
 
                 <li>
-                  <a href="{{url('almacen/acerca')}}">
+                  <a href="{{url('acerca_de')}}">
                     <i class="fa fa-info-circle"></i> <span>Acerca De..</span> 
                   </a>
                 </li>
@@ -247,135 +247,9 @@
           <script src="{{asset('js/jquery-ui-1.10.3.min.js')}}" type="text/javascript"></script>
 
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search..."/>
-            <span class="input-group-btn">
-              <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-            </span>
-          </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-          <li class="active">
-            <a href="{{'/home'}}">
-              <i class="fa fa-home"></i> <span>Inicio</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('almacen/articulo')}}">
-              <i class="fa fa-bar-chart-o"></i> <span>Inventario Gral.</span> <small class="badge pull-right bg-green">new</small>
-            </a>
-          </li>
-
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-edit"></i>
-              <span>Registrar</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="{{url('almacen/categoria')}}"><i class="fa fa-angle-double-right"></i>Categoria</a></li>
-              <li><a href="{{url('almacen/departamento')}}"><i class="fa fa-angle-double-right"></i>Departamento</a></li>
-              <li><a href="{{url('almacen/usuario')}}"><i class="fa fa-angle-double-right"></i>Usuarios</a></li>
-              <li><a href="{{url('almacen/proveedor')}}"><i class="fa fa-angle-double-right"></i>Proveedores</a></li>
-              <li><a href="{{url('almacen/personal')}}"><i class="fa fa-angle-double-right"></i>Personal</a></li>
-            </ul>
-          </li>
-
-
-
-
-          <li class="treeview">
-            <a href="#">
-              <i class="glyphicon glyphicon-shopping-cart"></i>
-              <span>Stok's</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="{{url('almacen/stminimo')}}"><i class="fa fa-angle-double-right"></i>Stock Minimo</a></li>
-              <li><a href="{{url('almacen/stmaximo')}}"><i class="fa fa-angle-double-right"></i>Stock Maximo</a></li>
-
-            </ul>
-          </li>
-
-
-          <li class="treeview">
-            <a href="#">
-              <i class="glyphicon glyphicon-shopping-cart"></i>
-              <span>Gestion Articulos</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="{{url('almacen/ingreso')}}"><i class="glyphicon glyphicon-circle-arrow-down"></i>Entrada Articulos</a></li>
-              <li><a href="{{url('almacen/salida')}}"><i class="glyphicon glyphicon-circle-arrow-up"></i>Salida Articulos</a></li>
-              <li><a href="{{url('almacen/memo')}}"><i class="glyphicon glyphicon-list-alt"></i>Memorandum</a></li>
-
-
-            </ul>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-question-circle"></i> <span>Ayuda. ?</span> 
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-info-circle"></i> <span>Acerca De..</span> 
-            </a>
-          </li>
-
-
-
-        </ul>
-      </section>
-      <!-- /.sidebar -->
-    </aside>
-
-    <!-- Right side column. Contains the navbar and content of the page -->
-    <aside class="right-side">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>
-          BIENVENIDO
-          <small>SISTEMA CONTROL DE ALMACEN (SISCA)</small>
-        </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
-      </section>
-
-      <!-- Main content -->
-      <section class="content">
-
-
-        @yield('contenido')
-
-
-      </section><!-- /.content -->
-    </aside><!-- /.right-side -->
-
+    
 
     <!-- add new calendar event modal -->
-
-
-
-    <!-- jQuery 2.0.2 -->
-
-    <!-- Bootstrap -->
-    <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
-
-    <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
-    <!--   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
-    <!-- jQuery UI 1.10.3 -->
-    <script src="{{asset('js/jquery-ui-1.10.3.min.js')}}" type="text/javascript"></script>
 
 
           <!-- TABLES JQUERY

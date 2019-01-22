@@ -34,7 +34,7 @@ class ArticuloController extends Controller
    if ($request) {
 
 
-$query=trim($request->get('searchText'));
+    $query=trim($request->get('searchText'));
      	//COMBERTIMOS ARTICULOS = A para manejarlo como un alias
     $articulos=DB::table('articulo as a')   
         //se hace un join para relacionar el idcategoria de las tablas articulos con categoria 
@@ -152,6 +152,12 @@ public function pdf()
 
   $pdf=PDF::loadView("almacen.articulo.invoice",["articulos"=>$articulos]);
   return $pdf->stream("archivo.pdf");
+}
+
+
+public function acerca_de()
+{
+  return view('acercade');
 }
 
 
