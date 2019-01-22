@@ -30,66 +30,84 @@
 
           <div class="row">
 
-           <div class=" col-xs-6">
-            <div class="panel panel-primary">
-              <div class="panel-body">
+             <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarMemoFecha')}}" method="post" >
+                    {{csrf_field()}}
 
-                <h5>Buscar por Rango (Fechas) </h5>
+                    <h5>Buscar por Rango (Fechas) </h5>
 
-                <tr>
-                 <td>Fecha Mim:</td>
-                 <td><input type="text" id="dammin" name="dammin"></td>
-               </tr>
-               <tr>
-                <td>Fecha Max:</td>
-                <td><input type="text" id="dammax" name="dammax"></td>
-              </tr>
-            </div>
-          </div>
-        </div>
+                    <tr>
+                     <td>Fecha Min:</td>
+                     <td><input name="fechaMin" type="text" id="dammin" name="dammin"></td>
+                   </tr>
+                   <tr>
+                    <td>Fecha Max:</td>
+                    <td><input name="fechaMax" type="text" id="dammax" name="dammax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
 
-
-        <div class=" col-xs-6">
-          <div class="panel panel-primary">
-            <div class="panel-body">
-
-
-             <h5>Busqueda por Rango (#Folio Memo) </h5>
-
-             <tr>
-               <td> Folio Minimo:</td>
-               <td><input type="text" id="fomin" name="fomin"></td>
-             </tr>
-             <tr>
-              <td> Folio Maximo:</td>
-              <td><input type="text" id="fomax" name="fomax"></td>
-            </tr>
+               </form>
+             </div>
+           </div>
+         </div>
 
 
-          </div>
-        </div>
-      </div>
+          <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarMemoFoliome')}}" method="post" >
+                    {{csrf_field()}}
 
-      <div class=" col-xs-6">
-        <div class="panel panel-primary">
-          <div class="panel-body">
+                    <h5>Buscar por Rango (Folio Memo) </h5>
 
+                    <tr>
+                     <td>Folio Min:</td>
+                     <td><input name="folioMin" type="text" id="fomin" name="fomin"></td>
+                   </tr>
+                   <tr>
+                    <td>Folio Max:</td>
+                    <td><input name="folioMax" type="text" id="fomax" name="fomax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
 
-           <h5>Busqueda por Rango (# Memo) </h5>
+               </form>
+             </div>
+           </div>
+         </div>
 
-           <tr>
-             <td>Memo Min:</td>
-             <td><input type="text" id="nummin" name="nummin"></td>
-           </tr>
-           <tr>
-            <td>Memo Max:</td>
-            <td><input type="text" id="nummax" name="nummax"></td>
-          </tr>
+      <div id="divRangoFechas" class=" col-xs-6">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form  role="form" action="{{url('/descargarMemoNumerome')}}" method="post" >
+                    {{csrf_field()}}
 
+                    <h5>Buscar por Rango (# Memo) </h5>
 
-        </div>
-      </div>
-    </div>
+                    <tr>
+                     <td>Fecha Min:</td>
+                     <td><input name="memoMin" type="text" id="nummin" name="nummin"></td>
+                   </tr>
+                   <tr>
+                    <td>Fecha Max:</td>
+                    <td><input name="memoMax" type="text" id="nummax" name="nummax"></td>
+                  </tr>
+                  <tr>
+                  
+                   <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-search"></i></button>
+                 </tr>
+
+               </form>
+             </div>
+           </div>
+         </div>
 
 
 

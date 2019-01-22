@@ -86,6 +86,7 @@ Route::post('/descargarIngresoMemo','IngresoController@pdfMemo');
 
 Route::post('/descargarIngresoTotal','IngresoController@pdfTotal');
 
+<<<<<<< HEAD
 
 
 
@@ -106,3 +107,10 @@ Route::post('/descargarIngresoTotal','IngresoController@pdfTotal');
 
 
 Route::get('acerca_de','ArticuloController@acerca_de');
+=======
+Route::post('/descargarMemoFecha','MemoController@pdfFecha');
+
+Route::post('/descargarMemoFoliome','MemoController@pdfFoliome');
+
+Route::post('/descargarMemoNumerome','MemoController@pdfNumerome');
+>>>>>>> 21b45b627a5aed89c2b3d360f1a0613eb4740bc5
