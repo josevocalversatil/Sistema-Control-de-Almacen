@@ -85,3 +85,9 @@ Route::post('/descargarIngresoFactura','IngresoController@pdfFactura');
 Route::post('/descargarIngresoMemo','IngresoController@pdfMemo');
 
 Route::post('/descargarIngresoTotal','IngresoController@pdfTotal');
+
+Route::post('/descargarMemoFecha','MemoController@pdfFecha');
+
+Route::post('/descargarMemoFoliome','MemoController@pdfFoliome');
+
+Route::post('/descargarMemoNumerome','MemoController@pdfNumerome');
